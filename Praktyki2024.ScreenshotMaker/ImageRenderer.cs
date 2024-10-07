@@ -1,4 +1,5 @@
 using PuppeteerSharp;
+using HtmlAgilityPack;
 
 namespace ScreenshotMaker;
 
@@ -16,13 +17,29 @@ public class ImageRenderer : IDisposable
     {
         try
         {
-            var client = new HttpClient();
-            var html = await client.GetStringAsync(htmlUrl);
-            
-            // DO WORK HERE()
-            // 1. Wyszukać w pobranym HTML wszystkie linki i wpisać do listy linkList
-
+            var client = new HttpClient(); 
             var linkList = new List<string>();
+            var html = await client.GetStringAsync(htmlUrl);
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            // 1. Wyszukać w pobranym HTML wszystkie linki i wpisać do listy linkList
+            var anchorTags = htmlDoc.DocumentNode.SelectNodes("//a[@href]");
+            if (anchorTags != null)
+            {
+                foreach (var tag in anchorTags)
+                {
+                    var link = tag.GetAttributeValue("href", string.Empty);
+
+                    // Dodaj link do listy, jeśli nie jest pusty
+                    if (!string.IsNullOrEmpty(link))
+                    {
+                        linkList.Add(link);
+                    }
+                }
+            }
+
+
             foreach (var link in linkList)
             {
                 Console.WriteLine(link);

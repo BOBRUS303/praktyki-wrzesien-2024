@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScreenshotMaker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11ad2314f90b1cc388c7d437c06499a1f29b0352")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScreenshotMaker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScreenshotMaker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
