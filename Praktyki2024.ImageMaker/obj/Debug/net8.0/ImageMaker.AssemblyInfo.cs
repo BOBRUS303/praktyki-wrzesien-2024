@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageMaker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55d304b1f9f85ff51c49d61d6a9197c253c68701")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff268c81dda679a48badd298f56666fdffd8f2ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageMaker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageMaker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
