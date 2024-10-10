@@ -1,6 +1,7 @@
 using PuppeteerSharp;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ScreenshotMaker
@@ -9,6 +10,7 @@ namespace ScreenshotMaker
     {
         private BrowserFetcher _browserFetcher;
         private static readonly string[] options = new[] { "--window-size=3840,2160" };
+        private static readonly HttpClient _httpClient = new HttpClient();
 
         public ImageRenderer()
         {
@@ -19,42 +21,65 @@ namespace ScreenshotMaker
         {
             try
             {
-                // Download the Chromium browser if needed
+
                 await new BrowserFetcher().DownloadAsync();
 
-                // Launch the browser
+
                 using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
                 {
                     Headless = true,
                     Args = options
                 });
 
-                // Create a new page
+
                 using var page = await browser.NewPageAsync();
 
-                // Navigate to the URL
+
                 await page.GoToAsync(htmlUrl);
 
-                // Execute JavaScript in the page context to find all images
+
                 var imageElements = await page.EvaluateExpressionAsync<string[]>(@"
-                    Array.from(document.querySelectorAll('img')).map(img => 
-                        `${img.getAttribute('alt') || 'Brak atrybutu ALT'}, SRC: ${img.getAttribute('src') || 'Brak źródła'}` 
-                    );
+                    Array.from(document.querySelectorAll('img')).map(img => img.getAttribute('src') || 'Brak źródła')
                 ");
 
-                // Wypisz wszystkie znalezione obrazy
-                foreach (var image in imageElements)
+
+                foreach (var imageUrl in imageElements)
                 {
-                    Console.WriteLine(image);
+                    Console.WriteLine($"Found image: {imageUrl}");
+
+                    if (!string.IsNullOrEmpty(imageUrl) && Uri.IsWellFormedUriString(imageUrl, UriKind.Absolute))
+                    {
+
+                        await DownloadAndSaveImageAsync(imageUrl);
+                    }
                 }
-
-
 
                 Console.WriteLine("=======================================================================");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        private async Task DownloadAndSaveImageAsync(string imageUrl)
+        {
+            try
+            {
+                var imageBytes = await _httpClient.GetByteArrayAsync(imageUrl);
+
+
+                var imageFileName = Path.GetFileName(new Uri(imageUrl).LocalPath);
+                var localFilePath = Path.Combine(Directory.GetCurrentDirectory(), imageFileName);
+
+
+                await File.WriteAllBytesAsync(localFilePath, imageBytes);
+
+                Console.WriteLine($"Image saved locally: {localFilePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to download or save image {imageUrl}: {ex.Message}");
             }
         }
 
@@ -65,10 +90,10 @@ namespace ScreenshotMaker
 
         public async Task CreateScreen(string url)
         {
-            // Download the Chromium browser if needed
+
             await new BrowserFetcher().DownloadAsync();
 
-            // Launch the browser
+
             using var browser = await Puppeteer.LaunchAsync(new LaunchOptions
             {
                 Headless = true,
@@ -84,23 +109,19 @@ namespace ScreenshotMaker
                 EnqueueAsyncMessages = true
             });
 
-            // Create a new page
-            using var page = await browser.NewPageAsync();
 
-            // Navigate to the URL
+            using var page = await browser.NewPageAsync();
             var response = await page.GoToAsync(url);
 
-            // Set the viewport size if needed (optional)
             await page.SetViewportAsync(new ViewPortOptions
             {
                 Width = 2160,
                 Height = 3840
             });
 
-            // Take the screenshot
+
             await page.ScreenshotAsync(Path.Combine(Directory.GetCurrentDirectory(), "test_image_from_url_2.png"));
 
-            // Close the browser
             await browser.CloseAsync();
 
             Console.WriteLine("Screenshot saved!");

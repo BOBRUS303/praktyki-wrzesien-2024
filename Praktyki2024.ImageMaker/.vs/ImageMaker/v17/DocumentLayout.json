@@ -3,11 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\akret\\OneDrive\\Dokumenty\\GitHub\\praktyki-wrzesien-2024\\Praktyki2024.ImageMaker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\akret\\Downloads\\ImageRenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4FFF4F-A3A5-4218-B2D9-19AF0025DA01}|ImageMaker.csproj|c:\\users\\akret\\onedrive\\dokumenty\\github\\praktyki-wrzesien-2024\\praktyki2024.imagemaker\\imagerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4FFF4F-A3A5-4218-B2D9-19AF0025DA01}|ImageMaker.csproj|solutionrelative:imagerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B4FFF4F-A3A5-4218-B2D9-19AF0025DA01}|ScreenshotMaker.csproj|c:\\users\\akret\\onedrive\\dokumenty\\github\\praktyki-wrzesien-2024\\praktyki2024.imagemaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4FFF4F-A3A5-4218-B2D9-19AF0025DA01}|ScreenshotMaker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4FFF4F-A3A5-4218-B2D9-19AF0025DA01}|ImageMaker.csproj|c:\\users\\akret\\onedrive\\dokumenty\\github\\praktyki-wrzesien-2024\\praktyki2024.imagemaker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4FFF4F-A3A5-4218-B2D9-19AF0025DA01}|ImageMaker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,13 +24,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ImageRenderer.cs",
-              "DocumentMoniker": "C:\\Users\\akret\\Downloads\\ImageRenderer.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Downloads\\ImageRenderer.cs",
-              "ToolTip": "C:\\Users\\akret\\Downloads\\ImageRenderer.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Downloads\\ImageRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\akret\\OneDrive\\Dokumenty\\GitHub\\praktyki-wrzesien-2024\\Praktyki2024.ImageMaker\\ImageRenderer.cs",
+              "RelativeDocumentMoniker": "ImageRenderer.cs",
+              "ToolTip": "C:\\Users\\akret\\OneDrive\\Dokumenty\\GitHub\\praktyki-wrzesien-2024\\Praktyki2024.ImageMaker\\ImageRenderer.cs",
+              "RelativeToolTip": "ImageRenderer.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAIwG0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T06:49:03.319Z",
+              "WhenOpened": "2024-10-09T09:04:46.522Z",
               "EditorCaption": ""
             },
             {
@@ -40,10 +41,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\akret\\OneDrive\\Dokumenty\\GitHub\\praktyki-wrzesien-2024\\Praktyki2024.ImageMaker\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T06:48:28.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T06:48:28.163Z"
             }
           ]
         }

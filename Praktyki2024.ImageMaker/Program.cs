@@ -2,7 +2,7 @@
 
 using var rendered = new ImageRenderer();
 
-Console.WriteLine("Waiting for link: ");
+Console.WriteLine("Czekam na link: ");
 var htmlContent = Console.ReadLine();
 
 await rendered.GetDataFromURL(htmlContent);
